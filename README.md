@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# AgUnity Tech Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project will use the openweathermap api to show the user current weather information. 
 
-## Available Scripts
+The user should be able to enter a city name. If the city does not exist he should be notified. Otherwise, the weather information for the city will be added to the screen. The user can do this multiple times which will then show weather information of all the cities. The user should not be able to add the same city a second time.
 
-In the project directory, you can run:
+Additional: If the browser and the user allow access to his current location (for example via "navigator.geolocation") this place should be added automatically.
 
-### `npm start`
+## TODO
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Register for an API key at https://openweathermap.org/ and wait for your key to become active.
+- complete src/app/api.services.ts
+- complete src/app/models/weather.ts (you might want to check the API docs)
+- add a UI component under ./src/app/components which will be used for showing the weather information for each city. 
+- add a page under ./src/app/pages
+- change AppComponent and add routing (lazy loading) for the use of your new page
+- make sure all user facing text is using i18n and add a second language of your choice
+- please add appropriate documentation a comments
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Optional
 
-### `npm test`
+- please feel free to use observables, promises and rxjs. For example, the user could enable to use of localization later which should add his current weather information of not existing.
+- create a unit test for ApiService
+- create an e2e test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Submit
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please create a zip file out of the project folder WITHOUT the "node_modules" folder. 
