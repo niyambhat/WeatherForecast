@@ -1,17 +1,21 @@
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
-import React from 'react';
+
+import React, {useState} from 'react';
 import './App.scss';
-import Home from './Pages/Home';
-import { MainAppContext } from './AppContext';
+import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
+import Weather from './Pages/Weather';
+
 
 function App() {
   return (
-    <MainAppContext>
-        <div className="app">
-        <Home/>
+  <div className="app">
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Navigate to="/weather" />} />
+        <Route path="/weather" element={<Weather />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
       </div>
-    </MainAppContext>
   );
 }
 

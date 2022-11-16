@@ -1,0 +1,13 @@
+{
+    "title": "AG Tech",
+    "description": {
+      "welcome": "欢迎来客",
+      "feel": "感觉像",
+      "humid":"湿",
+      "windSpeed":"风速",
+      "cloud":"云",
+      "textPlaceHolder":"请输入城市"
+    }
+  }
+
+  

@@ -1,0 +1,14 @@
+{
+    "title": "AG Tech",
+    "description": {
+        "welcome": "Welcome Guest",
+        "feel": "Feels Like",
+        "humid":"Humidity",
+        "windSpeed":"Wind Speed",
+        "cloud":"Cloud",
+        "textPlaceHolder":"Please enter a city",
+        "errorMessage":"Please enter a corret location"
+    }
+  }
+
+  
