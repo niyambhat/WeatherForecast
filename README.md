@@ -2,7 +2,9 @@
 I,
 - Executed this project in React Js 
 - Used the Weather.tsx Page as a view Model to hold and pass all the necessary states.Ideally it would be favourable to use a React Context API with a reducer.
-- Utilised the APIService.tsx component to only perform the necessary API calculations and return the data back to the weather page.
+- Tried to separate UI Component and business logic.
+- Utilised UserLocationGetter.tsx to get users current location and load when the App first renders.
+- Utilised the APIService.tsx component to perform the necessary API calculations and return the data back to the weather page.
 - Applied user facing text using i18n, second language being chinese. However, the input text for the search bar is still in English.
 - Tried to name the classes and functions appropriately to make the code understandable. 
 - Added react router to set the default route by /Weather.
