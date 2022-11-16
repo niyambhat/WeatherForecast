@@ -8,6 +8,15 @@ type AppProps = {
 const  iconurl = "http://openweathermap.org/img/w/" ;
 const WeatherDisplayModel=({data}:AppProps)=>{
 const temperatureInCelsius = (data?.main.temp.toFixed()-32) * 0.5;
+
+function ConvertToCelsius(value:number){
+let temperatureInFarenheit:any= value?.toFixed();
+return (temperatureInFarenheit-32)*0.5
+}
+
+const currentTemperature = ConvertToCelsius(data?.main.temp);
+const feelsLike = ConvertToCelsius(data?.main.feels_like)
+
 const {t,i18n} =useTranslation();
 const changeLanguage=(language:string)=>{
   i18n.changeLanguage(language)
@@ -20,7 +29,7 @@ const changeLanguage=(language:string)=>{
         <p>{data?.name}</p>
       </div>
       <div className="temp">
-        <h1> {temperatureInCelsius} °C</h1><img className="weatherIcon" src={iconurl + data?.weather[0].icon + ".png"} alt="#"/>
+        <h1> {currentTemperature} °C</h1><img className="weatherIcon" src={iconurl + data?.weather[0].icon + ".png"} alt="#"/>
       </div>
       <div className="description">
         <p>{data?.weather[0].main}</p> 
@@ -28,11 +37,11 @@ const changeLanguage=(language:string)=>{
     </div>
     <div className="bottom">
         <div className="feels">
-          <p className='bold'>24°F</p> 
+          <p className='bold'>{feelsLike }°C</p> 
           <p><Trans i18nKey={"description.feel"}>Feels Like</Trans></p>
         </div>
         <div className="humidity">
-         <p className='bold'>10%</p> 
+         <p className='bold'>{data?.main.humidity}%</p> 
           <p><Trans i18nKey={"description.humid"}>Humidity</Trans></p>
         </div>
         <div className="wind">
