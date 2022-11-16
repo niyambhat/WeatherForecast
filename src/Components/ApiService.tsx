@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import axios from "axios";
-
 interface AppProps{
  city:string,
  setWeatherData:any,
@@ -23,7 +21,8 @@ const ApiService=({city, setWeatherData, trigger, pushToWeatherCollection,weathe
 const HTTPgetWeatherByCity = `${API_Store.OpenWeather.URL}?q=${city}&units=imperial&appid=${API_Store.OpenWeather.Key}`
 const HTTPgetWeatherByLatLong = `${API_Store.OpenWeather.URL}?lat=${currentLocation?.latitude}&lon=${currentLocation?.longitude}&units=imperial&appid=${API_Store.OpenWeather.Key}`
 const [locationActive,setLocationActive] =useState(false)
-export async function getWeatherByCity (){
+
+async function getWeatherByCity (){
   fetch(HTTPgetWeatherByCity)
   .then((response) => {
     if(response.ok) {
@@ -89,31 +88,3 @@ useEffect(() => {
 export default ApiService;
 
 
-// async function getWeatherByCity (){
-//   fetch(HTTPgetWeatherByCity)
-//   .then((response) => {
-//     console.log("resolved", response);
-//     return response.json();
-//   }).then((data) => {
-//     if(data){
-//       setWeatherData(data);
-//       pushToWeatherCollection(data);
-//     }
-// }).catch((err) => {
-//     console.log("error retrieving data", err);
-//     setLocationExists(false);
-//   });
-// }
-
-  // async function getWeatherByLatLong (){
-  //   fetch(HTTPgetWeatherByLatLong)
-  //   .then((response) => {
-  //     console.log("resolved", response);
-  //     return response.json();
-  //   }).then((data) => {
-  //     setWeatherData(data);
-  //     pushToWeatherCollection(data);
-  // }).catch((err) => {
-  //     console.log("error retrieving data", err);
-  //   });
-  // }
