@@ -3,10 +3,11 @@ interface AppProps{
  city:string,
  setWeatherData:any,
  trigger:number,
- pushToWeatherCollection:any,
+ pushToWeatherCollection:(item:any)=>void,
  currentLocation:any,
  setLocationExists:any,
- weatherCollection:any
+ weatherCollection:any,
+ resetCity:any
 }
 const API_Store= {
     OpenWeather:{
@@ -17,7 +18,7 @@ const API_Store= {
     }
 }
 
-const ApiService=({city, setWeatherData, trigger, pushToWeatherCollection,weatherCollection, currentLocation, setLocationExists}:AppProps)=> {
+const ApiService=({city, setWeatherData, trigger, pushToWeatherCollection,weatherCollection,resetCity, currentLocation, setLocationExists}:AppProps)=> {
 const HTTPgetWeatherByCity = `${API_Store.OpenWeather.URL}?q=${city}&units=imperial&appid=${API_Store.OpenWeather.Key}`
 const HTTPgetWeatherByLatLong = `${API_Store.OpenWeather.URL}?lat=${currentLocation?.latitude}&lon=${currentLocation?.longitude}&units=imperial&appid=${API_Store.OpenWeather.Key}`
 const [locationActive,setLocationActive] =useState(false)
@@ -27,6 +28,7 @@ async function getWeatherByCity (){
   .then((response) => {
     if(response.ok) {
       setLocationExists(true);
+      resetCity();
       return response.json();
     }
     if(!response.ok) setLocationExists(false);

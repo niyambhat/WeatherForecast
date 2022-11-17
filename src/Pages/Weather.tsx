@@ -29,11 +29,19 @@ function Home() {
   const setObservableDoesLocationExist=(value:Boolean)=>{
   setLocationExists(value);
   }
+  const setObservableCity=()=>{
+  setCity('');
+  }
+
+
+
   
   const searchWeatherByCity=(event:any)=>{
     const {value} =event.target
     if (event.key === 'Enter' && value.length > 0) {
-      setTrigger((trigger) => trigger + 1);    }
+      setTrigger((trigger) => trigger + 1);    
+   
+    }
   }
 
     return (
@@ -44,6 +52,7 @@ function Home() {
       setLocationExists={setObservableDoesLocationExist}
       currentLocation={currentLocation}
       trigger={trigger}
+      resetCity={setObservableCity}
       city={city} 
       setWeatherData={setDataFromWeatherAPI} 
       weatherCollection={weatherCollection}

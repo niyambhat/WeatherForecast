@@ -10,7 +10,7 @@ I,
 - Added react router to set the default route by /Weather.
 - Utilised Fetch API for HTTP requests. Alternatively, I have also used axios(promise based htttp client before) 
 
-I am still developing my sills in testing, however I have performed some manual testing. 
+I am still developing my sills in testing, however I have performed some manual testing. I can also makte this page accesibkle using aria-labels. 
 
 
 

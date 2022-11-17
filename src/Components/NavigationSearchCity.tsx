@@ -5,7 +5,7 @@ import {Trans, useTranslation} from "react-i18next";
 
 interface SearchType{
 doesUserCurrentLocationExists:Boolean | null,
-cityProvider:any,
+cityProvider:(item:any)=>void,
 city:string,
 searchWeatherByCity:any
 }
@@ -34,7 +34,7 @@ const placeholderText = t("description.textPlaceHolder");
             placeholder={placeholderText}
             type="text" />
             {doesUserCurrentLocationExists === false? <p className='err'><Trans i18nKey={"description.errorMessage"}>
-Please enter a correct location</Trans></p>: null}
+            Please enter a correct location</Trans></p>: null}
         </div>
         <div className='lang'>
           <button onClick={()=>changeLanguage("chi")}>🇨🇳</button> <button onClick={()=>changeLanguage("en")}>🇬🇧</button>

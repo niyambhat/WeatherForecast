@@ -6,7 +6,8 @@
       "humid":"湿",
       "windSpeed":"风速",
       "cloud":"云",
-      "textPlaceHolder":"请输入城市"
+      "textPlaceHolder":"请输入城市",
+      "errorMessage":"请输入正确的位置"
     }
   }
 
